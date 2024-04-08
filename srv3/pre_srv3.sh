@@ -6,5 +6,5 @@ git clone https://github.com/stivik20/otus_test.git
 chmod +x /root/otus_project/*/*.sh
 
 echo -e "if [ -f /etc/bash_completion ] && ! shopt -oq posix; then\n    . /etc/bash_completion\nfi" >> /root/.bashrc
-echo -e "Host 10.0.0.*\n   StrictHostKeyChecking accept-new" >> /root/.ssh/config
+echo -e "Host 192.168.0.*\n   StrictHostKeyChecking accept-new" >> /root/.ssh/config
 exec bash --rcfile /root/.bashrc
