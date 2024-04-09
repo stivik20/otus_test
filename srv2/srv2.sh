@@ -1,13 +1,13 @@
 #!/bin/bash
-rsync -av /root/otus_project/srv2/wordpress/ /var/www/
+rsync -av /root/otus_test/srv2/wordpress/ /var/www/
 chown -R www-data:www-data /var/www/html/
 chmod -R 755 /var/www/html/
-cp /root/otus_project/srv2/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp /root/otus_test/srv2/000-default.conf /etc/apache2/sites-available/000-default.conf
 systemctl reload apache2
-cp /root/otus_project/srv2/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+cp /root/otus_test/srv2/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 systemctl restart mysql
 
-backup_dir="/root/otus_project/mysql_backup/"
+backup_dir="/root/otus_test/mysql_backup/"
 for db_dir in $(ls $backup_dir); do
     db=$(basename $db_dir)
     for tbl_dir in $(ls $backup_dir/$db); do
@@ -31,8 +31,8 @@ GRANT REPLICATION SLAVE ON *.* TO '$DB_REPL_USER'@'%';
 FLUSH PRIVILEGES;"
 mysql -e "$MYSQL_COMMANDS"
 
-unison -batch /var/www ssh://10.0.0.12//var/www -owner -group
-new_crontab="* * * * * unison -batch /var/www ssh://10.0.0.12//var/www &> /dev/null"
+unison -batch /var/www ssh://192.168.0.52//var/www -owner -group
+new_crontab="* * * * * unison -batch /var/www ssh://192.168.0.52//var/www &> /dev/null"
 current_crontab=$(crontab -l 2>/dev/null)
 echo "$current_crontab" > temp_crontab
 echo "$new_crontab" >> temp_crontab
