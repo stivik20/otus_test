@@ -46,7 +46,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'otus_admin','$P$Bx.xxaLVDtQzDcjvnXladEQ/ucihbK1','otus_admin','mywhitefenderjaguar@gmail.com','http://10.0.0.11','2024-01-22 07:39:19','',0,'otus_admin');
+INSERT INTO `wp_users` VALUES (1,'otus_admin','$P$Bx.xxaLVDtQzDcjvnXladEQ/ucihbK1','otus_admin','mywhitefenderjaguar@gmail.com','http://192.168.0.51','2024-01-22 07:39:19','',0,'otus_admin');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
