@@ -5,7 +5,7 @@ ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa <<< y
 git clone https://github.com/stivik20/otus_test.git
 chmod +x /root/otus_test/*/*.sh
 wget -c https://mirror.yandex.ru/mirrors/packages.grafana.com/enterprise/deb/pool/main/g/grafana/grafana_10.2.0_amd64.deb
-dpkg -i /root/otus_test/grafana*.deb
+dpkg -i /root/otus_test/srv4/grafana*.deb
 apt -f install -y
 systemctl enable --now prometheus
 systemctl enable --now prometheus-node-exporter
