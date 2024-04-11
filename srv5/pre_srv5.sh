@@ -3,7 +3,7 @@ apt update && apt upgrade -y
 apt install bash-completion git prometheus-node-exporter -y
 ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa <<< y
 git clone https://github.com/stivik20/otus_test.git
-chmod +x /root/otus_project/*/*.sh
+chmod +x /root/otus_test/*/*.sh
 apt install default-jdk -y
 mkdir /root/elk
 cd /root/elk
