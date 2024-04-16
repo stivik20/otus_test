@@ -8,11 +8,12 @@ apt install default-jdk -y
 mkdir /root/elk
 cd /root/elk
 wget -c https://mirror.yandex.ru/mirrors/elastic/8/pool/main/e/elasticsearch/elasticsearch-8.9.1-amd64.deb
+wget -c https://mirror.yandex.ru/mirrors/elastic/8/pool/main/f/filebeat/filebeat-8.9.1-amd64.deb
 wget -c https://mirror.yandex.ru/mirrors/elastic/8/pool/main/k/kibana/kibana-8.9.1-amd64.deb
+wget -c https://mirror.yandex.ru/mirrors/elastic/8/pool/main/m/metricbeat/metricbeat-8.9.1-amd64.deb
 wget -c https://mirror.yandex.ru/mirrors/elastic/8/pool/main/l/logstash/logstash-8.9.1-amd64.deb
-dpkg -i /root/elk/elasticsearch*.deb
-dpkg -i /root/elk/kibana*.deb
-dpkg -i /root/elk/logstash*.deb
+wget -c https://mirror.yandex.ru/mirrors/elastic/8/pool/main/p/packetbeat/packetbeat-8.9.1-amd64.deb
+dpkg -i /root/elk/*.deb
 cd /root/
 systemctl daemon-reload
 systemctl enable --now elasticsearch
