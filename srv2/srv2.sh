@@ -31,10 +31,10 @@ GRANT REPLICATION SLAVE ON *.* TO '$DB_REPL_USER'@'%';
 FLUSH PRIVILEGES;"
 mysql -e "$MYSQL_COMMANDS"
 
-unison -batch /var/www ssh://192.168.0.52//var/www -owner -group
-new_crontab="* * * * * unison -batch /var/www ssh://192.168.0.52//var/www &> /dev/null"
-current_crontab=$(crontab -l 2>/dev/null)
-echo "$current_crontab" > temp_crontab
-echo "$new_crontab" >> temp_crontab
-crontab temp_crontab
-rm temp_crontab
+#unison -batch /var/www ssh://192.168.0.52//var/www -owner -group
+#new_crontab="* * * * * unison -batch /var/www ssh://192.168.0.52//var/www &> /dev/null"
+#current_crontab=$(crontab -l 2>/dev/null)
+#echo "$current_crontab" > temp_crontab
+#echo "$new_crontab" >> temp_crontab
+#crontab temp_crontab
+#rm temp_crontab
