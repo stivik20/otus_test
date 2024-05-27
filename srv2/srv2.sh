@@ -19,7 +19,7 @@ for db_dir in $(ls $backup_dir); do
 done
 
 DB_NAME="wordpress_db"
-DB_USER="wordpress"
+DB_USER="root"
 DB_PASSWORD="Qq123456"
 DB_REPL_USER="repl"
 DB_REPL_PASSWORD="Qq123456"
