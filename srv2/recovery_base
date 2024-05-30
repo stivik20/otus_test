@@ -1,7 +1,7 @@
 #!/bin/bash
 
 user="root"
-pass="Qq1233456"
+pass="Qq123456"
 db="TEST"
 tbl1="/root/otus_test/srv2/TEST_backup_mysql.sql"
 
