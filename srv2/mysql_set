@@ -1,0 +1,14 @@
+#!/bin/bash
+
+user="root"
+pass="Qq12345"
+
+# Создаём пользователя для реплики
+mysql -u$user -p$pass -e "CREATE USER 'repl'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'Qq12356';"
+# Даём ему права на репликацию
+mysql -u$user -p$pass -e "GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';"
+echo "Пользователь repl добавлен в MySQL и получил права на репликацию."
+# Устанавливаем пароль
+mysql -u$user -p$pass -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH 'caching_sha2_password' BY 'Qq123456';"
+echo "Для пользователь repl в MySQL, установлен пароль Qq123456"
+echo "Сервис Mysql готов к работе!"
