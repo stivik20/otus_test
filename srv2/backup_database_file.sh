@@ -2,8 +2,8 @@
 
 # Настройки подключения к MySQL
 user="root"
-pass="qq"
-BACKUP_DIR="/home/qqee/backup_db_mysql"
+pass="Qq123456"
+BACKUP_DIR="/root/otus_test/srv2/backup_db_mysql"
 
 # Получение списка баз данных
 DATABASES=$(mysql -u$user -p$pass -e "SHOW DATABASES" | grep -Ev "(Database|information_schema|performance_schema|mysql|sys)")
