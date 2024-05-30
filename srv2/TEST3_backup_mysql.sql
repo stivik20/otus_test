@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.35, for Linux (x86_64)
 --
--- Host: localhost    Database: TEST3
+-- Host: localhost    Database: TEST
 -- ------------------------------------------------------
 -- Server version       8.0.35-0ubuntu0.22.04.1
 
@@ -22,12 +22,12 @@
 CHANGE MASTER TO MASTER_LOG_FILE='binlog.000029', MASTER_LOG_POS=14438;
 
 --
--- Current Database: `TEST3`
+-- Current Database: `TEST`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `TEST3` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `TEST` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-USE `TEST3`;
+USE `TEST`;
 
 --
 -- Table structure for table `table1`
@@ -74,11 +74,11 @@ INSERT INTO `table2` VALUES (33),(123),(55);
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'TEST3'
+-- Dumping events for database 'TEST'
 --
 
 --
--- Dumping routines for database 'TEST3'
+-- Dumping routines for database 'TEST'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
