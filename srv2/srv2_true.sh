@@ -14,7 +14,7 @@ pass="Qq123456"
 BACKUP_DIR="/root/otus_test/srv2/backup_db_mysql"
 
 # Создаём пользователя для реплики
-mysql -u$user -p$pass -e "CREATE USER 'repl'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'Qq12356';"
+mysql -u$user -p$pass -e "CREATE USER 'repl'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'Qq123456';"
 # Даём ему права на репликацию
 mysql -u$user -p$pass -e "GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';"
 echo "Пользователь repl добавлен в MySQL и получил права на репликацию."
