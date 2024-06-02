@@ -1,25 +1,25 @@
 #!/bin/bash
 rsync -av /root/otus_test/srv2/wordpress/ /var/www/
-chown -R www-data:www-data /var/www/html/
-chmod -R 755 /var/www/html/
+#chown -R www-data:www-data /var/www/html/
+#chmod -R 755 /var/www/html/
 cp /root/otus_test/srv2/000-default.conf /etc/apache2/sites-available/000-default.conf
 systemctl reload apache2
 cp /root/otus_test/srv2/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 systemctl restart mysql
 
-backup_dir="/root/otus_test/mysql_backup/"
-for db_dir in $(ls $backup_dir); do
-    db=$(basename $db_dir)
-    for tbl_dir in $(ls $backup_dir/$db); do
-        tbl=$(basename $tbl_dir)
-        tbl_backup="$backup_dir/$db/$tbl/$tbl.sql"
-        mysql -u root -e "CREATE DATABASE IF NOT EXISTS $db;"
-        mysql -u root $db < $tbl_backup
-    done
-done
+#backup_dir="/root/otus_test/mysql_backup/"
+#for db_dir in $(ls $backup_dir); do
+#    db=$(basename $db_dir)
+#    for tbl_dir in $(ls $backup_dir/$db); do
+#        tbl=$(basename $tbl_dir)
+#        tbl_backup="$backup_dir/$db/$tbl/$tbl.sql"
+#        mysql -u root -e "CREATE DATABASE IF NOT EXISTS $db;"
+#        mysql -u root $db < $tbl_backup
+#    done
+#done
 
-DB_NAME="wordpress_db"
-DB_USER="root"
+DB_NAME="wp_database"
+DB_USER="wp_user"
 DB_PASSWORD="Qq123456"
 DB_REPL_USER="repl"
 DB_REPL_PASSWORD="Qq123456"
