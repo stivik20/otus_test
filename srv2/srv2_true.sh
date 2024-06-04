@@ -16,15 +16,14 @@ user="root"
 pass="Qq123456"
 BACKUP_DIR="/root/otus_test/srv2/"
 
-mysql -u$user -p$pass
-CREATE DATABASE wp_database;
-CREATE USER 'stivik'@'localhost' IDENTIFIED BY 'Qq123456';
-GRANT ALL PRIVILEGES ON wp_database.* TO 'stivik'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;
+mysql -u$user -p$pass -e "CREATE DATABASE wp_database;"
+mysql -u$user -p$pass -e "CREATE USER 'stivik'@'localhost' IDENTIFIED BY 'Qq123456';"
+mysql -u$user -p$pass -e "GRANT ALL PRIVILEGES ON wp_database.* TO 'stivik'@'localhost';"
+mysql -u$user -p$pass -e "FLUSH PRIVILEGES;"
 
-cd /otus_test/srv2/
-mysql -u root -p dbname < dump.sql
+cd otus_test/srv2/
+mysql -u root -p wp_databse < dump.sql
+cd
 
 # Создаём пользователя для реплики
 mysql -u$user -p$pass -e "CREATE USER 'repl'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'Qq123456';"
