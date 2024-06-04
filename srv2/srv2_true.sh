@@ -22,7 +22,7 @@ mysql -u$user -p$pass -e "GRANT ALL PRIVILEGES ON wp_database.* TO 'stivik'@'loc
 mysql -u$user -p$pass -e "FLUSH PRIVILEGES;"
 
 cd otus_test/srv2/
-mysql -u root -p wp_databse < dump.sql
+mysql -u root -p wp_database < dump.sql
 cd
 
 # Создаём пользователя для реплики
