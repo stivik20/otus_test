@@ -11,7 +11,7 @@ systemctl restart mysql
 # Настройки подключения к MySQL
 user="root"
 pass="Qq123456"
-BACKUP_DIR="/root/otus_test/srv2/backup_db_mysql"
+BACKUP_DIR="/root/otus_test/srv2/"
 
 # Создаём пользователя для реплики
 mysql -u$user -p$pass -e "CREATE USER 'repl'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'Qq123456';"
