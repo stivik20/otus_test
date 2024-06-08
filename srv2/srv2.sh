@@ -1,5 +1,5 @@
 #!/bin/bash
-rsync -av /root/otus_test/srv2/wordpress/ /var/www/
+rsync -av /root/otus_test/srv2/www/html /var/www/html
 #chown -R www-data:www-data /var/www/html/
 #chmod -R 755 /var/www/html/
 cp /root/otus_test/srv2/000-default.conf /etc/apache2/sites-available/000-default.conf
