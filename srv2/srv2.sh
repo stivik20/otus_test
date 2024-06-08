@@ -36,7 +36,8 @@ for DB_NAME in $DATABASES; do
     # Создание полного пути к файлу резервной копии
     BACKUP_PATH="${BACKUP_DIR}/${FILENAME}"
     # Создание резервной копии базы данных
-    mysqldump -u$user -p$pass --set-gtid-purged=OFF --source-data=1 --add-drop-table --databases --add-locks --create-o>    # Проверка успешности выполнения команды mysqldump
+     mysqldump -u$user -p$pass --set-gtid-purged=OFF --source-data=1 --add-drop-table --databases --add-locks --create-options --disable-keys --extended-insert --single-transaction --quick --set-charset --events --routines --triggers $DB_NAME > $BACKUP_PATH
+    # Проверка успешности выполнения команды mysqldump
     if [ $? -eq 0 ]; then
         echo "Резервная копия Б/Д $DB_NAME создана успешно. Путь к Б/Д: $BACKUP_PATH"
     else
