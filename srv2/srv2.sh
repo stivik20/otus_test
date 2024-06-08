@@ -17,18 +17,20 @@ systemctl restart mysql
 #        mysql -u root $db < $tbl_backup
 #    done
 #done
+user="root"
+pass="Qq123456"
 
 DB_NAME="wp_database"
 DB_USER="wp_user"
 DB_PASSWORD="Qq123456"
 DB_REPL_USER="repl"
 DB_REPL_PASSWORD="Qq123456"
-MYSQL_COMMANDS="CREATE USER '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASSWORD';
-GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';
-FLUSH PRIVILEGES;
-CREATE USER '$DB_REPL_USER'@'%' IDENTIFIED BY '$DB_REPL_PASSWORD';
-GRANT REPLICATION SLAVE ON *.* TO '$DB_REPL_USER'@'%';
-FLUSH PRIVILEGES;"
+mysql -u$user -p$pass -e "CREATE USER '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASSWORD'";
+mysql -u$user -p$pass -e GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';
+mysql -u$user -p$pass -e FLUSH PRIVILEGES;
+mysql -u$user -p$pass -e CREATE USER '$DB_REPL_USER'@'%' IDENTIFIED BY '$DB_REPL_PASSWORD';
+mysql -u$user -p$pass -e GRANT REPLICATION SLAVE ON *.* TO '$DB_REPL_USER'@'%';
+mysql -u$user -p$pass -e FLUSH PRIVILEGES;"
 mysql -e "$MYSQL_COMMANDS"
 
 #unison -batch /var/www ssh://192.168.0.52//var/www -owner -group
