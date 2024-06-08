@@ -53,7 +53,7 @@ echo "Для пользователь repl в MySQL, установлен пар
 echo "Сервис Mysql готов к работе!"
 
 # Получение списка баз данных
-DATABASES=$(mysql -u$user -p$pass -e "SHOW DATABASES" | grep -Ev "(Database|information_schema|performance_schema|mysql>
+DATABASES=$(mysql -u$user -p$pass -e "SHOW DATABASES" | grep -Ev "(Database|information_schema|performance_schema|mysql|sys)")
 
 # Создание директории для резервных копий
 mkdir -p $BACKUP_DIR
